@@ -2,13 +2,17 @@
 <br>
 
 
-##Week 1##
-Started Json Conversion assignment
+## Week 1##
 
-Started discussion post 
-
-Started App Flowchart
 
 Updated activity tracker
+
+Completed JSON Assignment 
+
+Completed Discussion post
+
+Completed Flowchart
+
+Started Visual Research project
 
 

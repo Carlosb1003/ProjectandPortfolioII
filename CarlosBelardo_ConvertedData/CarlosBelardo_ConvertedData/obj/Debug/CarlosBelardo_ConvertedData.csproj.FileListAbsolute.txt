@@ -1,0 +1,17 @@
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\CarlosBelardo_ConvertedData.exe.config
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\CarlosBelardo_ConvertedData.exe
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\CarlosBelardo_ConvertedData.pdb
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\MySql.Data.dll
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.csprojAssemblyReference.cache
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.csproj.CoreCompileInputs.cache
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.csproj.CopyComplete
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.exe
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.pdb
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\CarlosBelardo_ConvertedData.exe.config
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\CarlosBelardo_ConvertedData.exe
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\bin\Debug\CarlosBelardo_ConvertedData.pdb
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.csproj.CopyComplete
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.exe
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_ConvertedData\CarlosBelardo_ConvertedData\obj\Debug\CarlosBelardo_ConvertedData.pdb
