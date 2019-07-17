@@ -2,7 +2,7 @@
 <br>
 
 
-## Week 1##
+## Week 1
 
 
 Updated activity tracker
@@ -13,6 +13,10 @@ Completed Discussion post
 
 Completed Flowchart
 
-Started Visual Research project
+Completed Visual Research project
+<br>
 
+## Week 2 
+
+Started Data Visualization Practice
 
