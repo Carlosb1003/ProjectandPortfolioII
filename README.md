@@ -19,4 +19,15 @@ Completed Visual Research project
 ## Week 2 
 
 Started Data Visualization Practice
+Completed all week 2 items
+<br>
+
+## Week 3
+Completed all week three Items
+<br>
+## Week 4
+
+Time Tracker app completed
+Uploading Files to GitHub
+Final Exam Completed
 
