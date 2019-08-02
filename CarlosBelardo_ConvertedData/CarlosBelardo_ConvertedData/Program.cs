@@ -53,6 +53,7 @@ namespace CarlosBelardo_ConvertedData
                 //switch statement
                 switch (selection)
                 {
+
                     //case to convert restaurant data
                     case "convert the restaurant profile table from sql to json":
                     case "1":
@@ -149,11 +150,463 @@ namespace CarlosBelardo_ConvertedData
 
                         }
                         break;
-                    //for future assignment
+                    //Case to display restaurant ratings
                     case "showcase our 5 star rating system":
                     case "2":
                         {
+                            Console.Clear();
+                            //retrieving user name
+                            Console.WriteLine("Please type your name so I can address you properly");
+                            string name = Console.ReadLine();
+                            //displaying sorting menu options
+                            Console.WriteLine("Hello "+ name +", How would you like to sort the data: " );
+                            Console.WriteLine("1. List Restaurants Alphabetically (Show Rating Next To Name)");
+                            Console.WriteLine("2. List Restaurants in Reverse Alphabetical (Show Rating Next To Name)");
+                            Console.WriteLine("3. Sort Restaurants From Best to Worst (Show Rating Next To Name)");
+                            Console.WriteLine("4. Sort Restaurants From Worst to Best (Show Rating Next To Name)");
+                            Console.WriteLine("5. Show Only X-stars rated and Up");
+                            string select = Console.ReadLine();
+                            int choice;
+                            int.TryParse(select, out choice);
+                            //separating each option from the menu using a conditional
+                            if (choice == 1)
+                            {
+                                //retrieving names alphabetically
+                                MySqlConnection conn = new MySqlConnection(cs);
+                                conn.Open();
+                                string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles  ORDER BY RestaurantName ASC;";
+                                MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                MySqlDataReader rdr = cmd.ExecuteReader();
+                                while (rdr.Read())
+                                {
+                                    RestaurantName = rdr["RestaurantName"].ToString();
+                                    OverallRating = rdr["OverallRating"].ToString();
+                                    string rate = "";
+                                    
+                                    //displaying rating using * and code padding
+                                    if (OverallRating=="0.50"||OverallRating == "1.00"||OverallRating=="1.25")                                   
+                                    {
+                                        rate = OverallRating.PadRight(5, '*');
+                                    }
+                                    else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00"|| OverallRating=="2.25")
+                                    {
+                                        rate = OverallRating.PadRight(6, '*');
+                                    }
+                                    else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                    {
+                                        rate = OverallRating.PadRight(7, '*');
+                                    }
+                                    else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                    {
+                                        rate = OverallRating.PadRight(8, '*');
+                                    }
+                                    else if ( OverallRating == "4.50" || OverallRating == "4.75"||OverallRating == "5.00")
+                                    {
+                                        rate = OverallRating.PadRight(9, '*');
+                                    }
+                                    else
+                                    {
+                                        rate = OverallRating;
+                                    }
 
+                                        Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                    
+                                    
+                                }
+                                Console.WriteLine("Press Space to return to main menu");
+                                Console.ReadKey();
+                            }
+                            else if (choice == 2)
+                            {
+                                //displaying restaurant names reverse alphabetically 
+                                MySqlConnection conn = new MySqlConnection(cs);
+                                conn.Open();
+                                string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles  ORDER BY RestaurantName DESC;";
+                                MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                MySqlDataReader rdr = cmd.ExecuteReader();
+                                while (rdr.Read())
+                                {
+                                    RestaurantName = rdr["RestaurantName"].ToString();
+                                    OverallRating = rdr["OverallRating"].ToString();
+
+                                    string rate = "";
+
+                                    //using code padding to display rating in "stars" as *
+                                    if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                    {
+                                        rate = OverallRating.PadRight(5, '*');
+                                    }
+                                    else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                    {
+                                        rate = OverallRating.PadRight(6, '*');
+                                    }
+                                    else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                    {
+                                        rate = OverallRating.PadRight(7, '*');
+                                    }
+                                    else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                    {
+                                        rate = OverallRating.PadRight(8, '*');
+                                    }
+                                    else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                    {
+                                        rate = OverallRating.PadRight(9, '*');
+                                    }
+                                    else
+                                    {
+                                        rate = OverallRating;
+                                    }
+
+                                    Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                   
+                                }
+                                Console.WriteLine("Press Space to return to main menu");
+                                Console.ReadKey();
+                            }
+                            else if (choice == 3)
+                            {
+                                //displaying restaurants by rating from best to worst
+                                MySqlConnection conn = new MySqlConnection(cs);
+                                conn.Open();
+                                string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles  ORDER BY OverallRating DESC;";
+                                MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                MySqlDataReader rdr = cmd.ExecuteReader();
+                                while (rdr.Read())
+                                {
+                                    RestaurantName = rdr["RestaurantName"].ToString();
+                                    OverallRating = rdr["OverallRating"].ToString();
+
+                                    string rate = "";
+
+                                    //using code padding to display rating in "stars" as *
+                                    if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                    {
+                                        rate = OverallRating.PadRight(5, '*');
+                                    }
+                                    else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                    {
+                                        rate = OverallRating.PadRight(6, '*');
+                                    }
+                                    else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                    {
+                                        rate = OverallRating.PadRight(7, '*');
+                                    }
+                                    else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                    {
+                                        rate = OverallRating.PadRight(8, '*');
+                                    }
+                                    else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                    {
+                                        rate = OverallRating.PadRight(9, '*');
+                                    }
+                                    else
+                                    {
+                                        rate = OverallRating;
+                                    }
+
+                                    Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                    
+                                }
+                                Console.WriteLine("Press Space to return to main menu");
+                                Console.ReadKey();
+
+                            }
+                            else if (choice == 4)
+                            {
+                                //displaying restaurant ratings from worst to best
+                                MySqlConnection conn = new MySqlConnection(cs);
+                                conn.Open();
+                                string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles  ORDER BY OverallRating ASC;";
+                                MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                MySqlDataReader rdr = cmd.ExecuteReader();
+                                while (rdr.Read())
+                                {
+                                    RestaurantName = rdr["RestaurantName"].ToString();
+                                    OverallRating = rdr["OverallRating"].ToString();
+
+                                    string rate = "";
+
+                                    //using code padding to display rating in "stars" as *
+                                    if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                    {
+                                        rate = OverallRating.PadRight(5, '*');
+                                    }
+                                    else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                    {
+                                        rate = OverallRating.PadRight(6, '*');
+                                    }
+                                    else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                    {
+                                        rate = OverallRating.PadRight(7, '*');
+                                    }
+                                    else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                    {
+                                        rate = OverallRating.PadRight(8, '*');
+                                    }
+                                    else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                    {
+                                        rate = OverallRating.PadRight(9, '*');
+                                    }
+                                    else
+                                    {
+                                        rate = OverallRating;
+                                    }
+
+                                    Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                    
+                                }
+
+                                Console.WriteLine("Press Space to return to main menu");
+                                Console.ReadKey();
+                            }
+                            else if (choice == 5)
+                            {
+                                //submenu created for selecting restaurants based off of star rating
+                                Console.WriteLine("1. Show the Best (5 Stars)");
+                                Console.WriteLine("2. Show 4 Stars and Up");
+                                Console.WriteLine("3. Show 3 Stars and Up");
+                                Console.WriteLine("4. Show the Worst (1 Stars)");
+                                Console.WriteLine("5. Show Unrated");
+                                Console.WriteLine("6. Back");
+                                string sub = Console.ReadLine();
+                                //displaying and separating each restaurant based off of star rating
+                                if (sub == "1")
+                                {
+                                    MySqlConnection conn = new MySqlConnection(cs);
+                                    conn.Open();
+                                    string stm = "SELECT RestaurantName,OverallRating FROM RestaurantProfiles WHERE OverallRating ='5.00'" +
+                                        " ORDER BY RestaurantName ASC;";
+                                    MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                    MySqlDataReader rdr = cmd.ExecuteReader();
+                                    while (rdr.Read())
+                                    {
+                                        RestaurantName = rdr["RestaurantName"].ToString();
+                                        OverallRating = rdr["OverallRating"].ToString();
+                                        string rate = "";
+
+
+                                        if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                        {
+                                            rate = OverallRating.PadRight(5, '*');
+                                        }
+                                        else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                        {
+                                            rate = OverallRating.PadRight(6, '*');
+                                        }
+                                        else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                        {
+                                            rate = OverallRating.PadRight(7, '*');
+                                        }
+                                        else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                        {
+                                            rate = OverallRating.PadRight(8, '*');
+                                        }
+                                        else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                        {
+                                            rate = OverallRating.PadRight(9, '*');
+                                        }
+                                        else
+                                        {
+                                            rate = OverallRating;
+                                        }
+
+                                        Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                    }
+                                    Console.WriteLine("Press Space to return to main menu");
+                                    Console.ReadKey();
+                                }
+                                else if (sub == "2")
+                                {
+                                    MySqlConnection conn = new MySqlConnection(cs);
+                                    conn.Open();
+                                    string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles WHERE OverallRating >='4.00'&& OverallRating<'5.00' ORDER BY RestaurantName ASC;";
+                                    MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                    MySqlDataReader rdr = cmd.ExecuteReader();
+                                    while (rdr.Read())
+                                    {
+                                        RestaurantName = rdr["RestaurantName"].ToString();
+                                        OverallRating = rdr["OverallRating"].ToString();
+                                        string rate = "";
+
+
+                                        if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                        {
+                                            rate = OverallRating.PadRight(5, '*');
+                                        }
+                                        else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                        {
+                                            rate = OverallRating.PadRight(6, '*');
+                                        }
+                                        else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                        {
+                                            rate = OverallRating.PadRight(7, '*');
+                                        }
+                                        else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                        {
+                                            rate = OverallRating.PadRight(8, '*');
+                                        }
+                                        else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                        {
+                                            rate = OverallRating.PadRight(9, '*');
+                                        }
+                                        else
+                                        {
+                                            rate = OverallRating;
+                                        }
+
+                                        Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                    }
+                                    Console.WriteLine("Press Space to return to main menu");
+                                    Console.ReadKey();
+
+                                }
+                                else if (sub == "3")
+                                {
+                                    MySqlConnection conn = new MySqlConnection(cs);
+                                    conn.Open();
+                                    string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles WHERE OverallRating >='3.00'&& OverallRating<'4.00' ORDER BY RestaurantName ASC;";
+                                    MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                    MySqlDataReader rdr = cmd.ExecuteReader();
+                                    while (rdr.Read())
+                                    {
+                                        RestaurantName = rdr["RestaurantName"].ToString();
+                                        OverallRating = rdr["OverallRating"].ToString();
+                                        string rate = "";
+
+
+                                        if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                        {
+                                            rate = OverallRating.PadRight(5, '*');
+                                        }
+                                        else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                        {
+                                            rate = OverallRating.PadRight(6, '*');
+                                        }
+                                        else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                        {
+                                            rate = OverallRating.PadRight(7, '*');
+                                        }
+                                        else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                        {
+                                            rate = OverallRating.PadRight(8, '*');
+                                        }
+                                        else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                        {
+                                            rate = OverallRating.PadRight(9, '*');
+                                        }
+                                        else
+                                        {
+                                            rate = OverallRating;
+                                        }
+
+                                        Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+
+                                    }
+                                    Console.WriteLine("Press Space to return to main menu");
+                                    Console.ReadKey();
+                                }
+                                else if (sub == "4")
+                                {
+                                    MySqlConnection conn = new MySqlConnection(cs);
+                                    conn.Open();
+                                    string stm = "SELECT  RestaurantName,OverallRating FROM RestaurantProfiles WHERE OverallRating ='1.00' ORDER BY RestaurantName ASC;;";
+                                    MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                    MySqlDataReader rdr = cmd.ExecuteReader();
+                                    while (rdr.Read())
+                                    {
+                                        RestaurantName = rdr["RestaurantName"].ToString();
+                                        OverallRating = rdr["OverallRating"].ToString();
+                                        string rate = "";
+
+
+                                        if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                        {
+                                            rate = OverallRating.PadRight(5, '*');
+                                        }
+                                        else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                        {
+                                            rate = OverallRating.PadRight(6, '*');
+                                        }
+                                        else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                        {
+                                            rate = OverallRating.PadRight(7, '*');
+                                        }
+                                        else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                        {
+                                            rate = OverallRating.PadRight(8, '*');
+                                        }
+                                        else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                        {
+                                            rate = OverallRating.PadRight(9, '*');
+                                        }
+                                        else
+                                        {
+                                            rate = OverallRating;
+                                        }
+
+                                        Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                        
+                                    }
+                                    Console.WriteLine("Press Space to return to main menu");
+                                    Console.ReadKey();
+                                }
+                                else if (sub == "5")
+                                {
+                                    MySqlConnection conn = new MySqlConnection(cs);
+                                    conn.Open();
+                                    string stm = "SELECT RestaurantName,OverallRating FROM RestaurantProfiles WHERE OverallRating IS NULL" +
+                                        " ORDER BY RestaurantName ASC;";
+                                    MySqlCommand cmd = new MySqlCommand(stm, conn);
+                                    MySqlDataReader rdr = cmd.ExecuteReader();
+                                    while (rdr.Read())
+                                    {
+                                        RestaurantName = rdr["RestaurantName"].ToString();
+                                        OverallRating = rdr["OverallRating"].ToString();
+                                        string rate = "";
+
+
+                                        if (OverallRating == "0.50" || OverallRating == "1.00" || OverallRating == "1.25")
+                                        {
+                                            rate = OverallRating.PadRight(5, '*');
+                                        }
+                                        else if (OverallRating == "1.50" || OverallRating == "1.75" || OverallRating == "2.00" || OverallRating == "2.25")
+                                        {
+                                            rate = OverallRating.PadRight(6, '*');
+                                        }
+                                        else if (OverallRating == "2.50" || OverallRating == "2.75" || OverallRating == "3.00" || OverallRating == "3.25")
+                                        {
+                                            rate = OverallRating.PadRight(7, '*');
+                                        }
+                                        else if (OverallRating == "3.50" || OverallRating == "3.75" || OverallRating == "4.00" || OverallRating == "4.25")
+                                        {
+                                            rate = OverallRating.PadRight(8, '*');
+                                        }
+                                        else if (OverallRating == "4.50" || OverallRating == "4.75" || OverallRating == "5.00")
+                                        {
+                                            rate = OverallRating.PadRight(9, '*');
+                                        }
+                                        else
+                                        {
+                                            rate = OverallRating;
+                                        }
+
+                                        Console.WriteLine("Name: " + RestaurantName + " ||Rating: " + rate);
+                                    }
+                                    Console.WriteLine("Press Space to return to main menu");
+                                    Console.ReadKey();
+                                }
+                                else if (sub == "6")
+                                {
+
+                                    goto case "2";
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please choose 1-5, press enter to return to menu");
+                                Console.ReadKey();
+                                goto case "2";
+                            }
                         }
                         break;
                     //for future assignment
@@ -187,12 +640,12 @@ namespace CarlosBelardo_ConvertedData
             Console.WriteLine();
             Console.WriteLine("Select an option.");
             Console.WriteLine("1. Convert the restaurant profile table from SQL to JSON");
-            //Console.WriteLine("2. Showcase Our 5 Star Rating System");
+            Console.WriteLine("2. Showcase Our 5 Star Rating System");
             //Console.WriteLine("3. Showcase Our Animated Bar Graph Review System");
             //Console.WriteLine("4. Play A Card Game");
             Console.WriteLine("5. Exit");
         }
-
+        
        
 
     }

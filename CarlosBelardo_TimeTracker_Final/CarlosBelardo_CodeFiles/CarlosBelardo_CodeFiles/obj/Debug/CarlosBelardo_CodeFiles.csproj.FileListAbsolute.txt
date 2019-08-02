@@ -1,0 +1,17 @@
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\CarlosBelardo_CodeFiles.exe.config
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\CarlosBelardo_CodeFiles.exe
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\CarlosBelardo_CodeFiles.pdb
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\MySql.Data.dll
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.csprojAssemblyReference.cache
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.csproj.CoreCompileInputs.cache
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.csproj.CopyComplete
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.exe
+C:\Users\Carlos Belardo\source\repos\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.pdb
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\CarlosBelardo_CodeFiles.exe.config
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\CarlosBelardo_CodeFiles.exe
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\bin\Debug\CarlosBelardo_CodeFiles.pdb
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.csproj.CopyComplete
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.exe
+\\vmware-host\Shared Folders\Desktop\CarlosBelardo_TimeTrackerApp\CarlosBelardo_CodeFiles\CarlosBelardo_CodeFiles\obj\Debug\CarlosBelardo_CodeFiles.pdb
